@@ -1,0 +1,21 @@
+{
+  "name": "meteor-ping",
+  "version": "0.1.0",
+  "description": "Ping a Meteor app to confirm it is online",
+  "main": "main.js",
+  "bin": {
+    "meteor-ping": "./main.js"
+  },
+  "repository": "meonkeys/meteor-ping",
+  "author": "Adam Monsen <haircut@gmail.com> (http://adammonsen.com)",
+  "license": {
+    "type": "MIT",
+    "url": "https://opensource.org/licenses/mit-license.php"
+  },
+  "dependencies": {
+    "ddp": "^0.11.0",
+    "debug": "^2.2.0",
+    "promise-polyfill": "^3.1.0",
+    "yargs": "^4.3.1"
+  }
+}
