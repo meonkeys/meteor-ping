@@ -23,6 +23,7 @@ var argv = yargs
   .argv;
 
 var debug = debugPkg('upcheck');
+debug('start');
 
 var ddpclient = new DDPClient({
   host: argv.host,
@@ -92,6 +93,7 @@ connect()
   .then(function() {
     console.log(argv.host + ':' + argv.port + ' is ready.');
     ddpclient.close();
+    debug('end');
     process.exit(0);
   })
   .catch(function(reason) {
@@ -101,6 +103,7 @@ connect()
     } else {
       console.error('Abort.');
     }
+    debug('end, with errors');
     process.exit(1);
   });
 
