@@ -61,14 +61,14 @@ function connect() {
             }); // should we have a catch here?
           }, argv.retryInterval);
         } else {
-          // doesn't actually reject if we call reject() here
-          // so BAM ☢, throw an Error
-          throw new Error('connection failed and exceeded maxRetries');
+          reject(new Error('connection to ' + argv.host + ':' + argv.port + ' failed and exceeded maxRetries'));
+          return;
         }
       } else {
         if (wasReconnect) {
           // we should never get here when autoReconnect is false
           reject('Unexpected condition: connection reestablished.');
+          return;
         }
         resolve();
       }
@@ -99,7 +99,7 @@ connect()
   .catch(function(reason) {
     // specific error provided by ddpclient socket-error emitter
     if (reason) {
-      console.error('Abort because: ' + reason);
+      console.error(reason);
     } else {
       console.error('Abort.');
     }
