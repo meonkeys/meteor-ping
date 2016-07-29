@@ -1,4 +1,4 @@
-# 0.2.0 - 2016-07-28
+# 0.2.2 - 2016-07-28
 
 * Refactor into a module and a library, and support use of either
   independently.

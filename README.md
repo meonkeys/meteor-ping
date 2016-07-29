@@ -2,6 +2,8 @@
 
 Ping a [Meteor](https://www.meteor.com) app to confirm it is online.
 
+Timing is done internally to adjust for Node.js startup time.
+
 ## Synopsis
 
 ### Command-line use
@@ -11,6 +13,10 @@ npm install -g meteor-ping
 meteor-ping --host=pingme.meteor.com --port=80
 ```
 
+Upon failure, a message is printed to standard error and the program exits with an error code.
+
+Upon success, the milliseconds elapsed for the ping is printed to standard output.
+
 ### API
 
 ```bash
@@ -18,11 +24,14 @@ npm install --save meteor-ping
 ```
 
 ```javascript
+'use strict';
+
 var MeteorPing = require('meteor-ping');
 var localApp = new MeteorPing({
   host: 'localhost',
   port: 3000,
   ssl: false,
+  timeout: 10 * 1000, // 10 seconds
 });
 
 localApp.ping(function(error, result) {
