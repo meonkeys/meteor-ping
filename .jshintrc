@@ -1,0 +1,11 @@
+{
+  "esnext":       false,    // Support ES2015.
+  "quotmark":     "single", // Enforce single quotation marks.
+  "globalstrict": true,     // Allow global "use strict" (also enables 'strict')
+  "white":        true,     // Use strict whitespace and indentation rules.
+  "nonbsp":       true,     // Warns about "non-breaking whitespace" characters.
+  "node":         true,     // Recognize Node.js globals.
+  "unused":       true,     // Warn about unused variables.
+  "globals"       : [       // Custom globals.
+  ]
+}
