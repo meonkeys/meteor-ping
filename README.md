@@ -1,5 +1,7 @@
 # meteor-ping
 
+[![Build Status](https://travis-ci.org/meonkeys/meteor-ping.svg?branch=master)](https://travis-ci.org/meonkeys/meteor-ping)
+
 Ping a [Meteor](https://www.meteor.com) app to confirm it is online.
 
 Timing is done internally to adjust for Node.js startup time.
