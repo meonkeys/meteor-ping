@@ -29,6 +29,8 @@ npm install --save meteor-ping
 'use strict';
 
 var MeteorPing = require('meteor-ping');
+
+// all args are optional, here are the defaults
 var localApp = new MeteorPing({
   host: 'localhost',
   port: 3000,
