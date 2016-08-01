@@ -8,12 +8,7 @@ var yargs = require('yargs');
 var argv = yargs
   .usage('Usage: $0 [options]')
   .boolean(['ssl'])
-  .default({
-    host: 'localhost',
-    port: 3000,
-    ssl: false,
-    timeout: 10 * 1000,
-  })
+  .default(MeteorPing.defaultConstructorArgs)
   .describe('timeout', 'Time in milliseconds before aborting ping attempt. Exits with error status if timeout is exceeded.')
   .help('h')
   .alias('h', 'help')

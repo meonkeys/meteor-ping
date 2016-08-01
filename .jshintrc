@@ -5,6 +5,7 @@
   "white":        true,     // Use strict whitespace and indentation rules.
   "nonbsp":       true,     // Warns about "non-breaking whitespace" characters.
   "node":         true,     // Recognize Node.js globals.
+  "mocha":        true,     // Recognize mocha test framework globals.
   "unused":       true,     // Warn about unused variables.
   "globals"       : [       // Custom globals.
   ]
