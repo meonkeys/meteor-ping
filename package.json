@@ -10,10 +10,14 @@
     "meteor-ping": "./run.js"
   },
   "scripts": {
-    "test": "mocha"
+    "debug": "DEBUG=* ./run.js",
+    "test": "jshint --exclude-path .jshintignore --verbose . && mocha"
   },
   "repository": "meonkeys/meteor-ping",
-  "author": "Adam Monsen <haircut@gmail.com> (http://adammonsen.com)",
+  "author": {
+    "name": "Adam Monsen <haircut@gmail.com>",
+    "url": "http://adammonsen.com"
+  },
   "license": {
     "type": "MIT",
     "url": "https://opensource.org/licenses/mit-license.php"
