@@ -65,10 +65,7 @@ All arguments are optional.
 
 ## Description
 
-Meteor apps deliver static content and layout. A websocket or long-polling
-connection is used to deliver data. An app may return a HTTP 200 OK even if
-data cannot be retrieved. It is helpful to have a smarter check
-to ensure the static content **and** data are available.
+Meteor apps deliver static content and layout. A websocket or long-polling connection is used to deliver data. An app may return a HTTP 200 OK even if data cannot be retrieved. It is helpful to have a smarter check to ensure the static content **and** data are available.
 
 The pinged app must use the [Accounts system](https://docs.meteor.com/#/full/accounts_api) or must override the `collection` constructor argument.
 
