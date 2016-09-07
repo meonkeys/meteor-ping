@@ -1,5 +1,5 @@
 {
-  "esnext":       false,    // Support ES2015.
+  "esnext":       true,     // Support ES2015.
   "quotmark":     "single", // Enforce single quotation marks.
   "globalstrict": true,     // Allow global "use strict" (also enables 'strict')
   "white":        true,     // Use strict whitespace and indentation rules.

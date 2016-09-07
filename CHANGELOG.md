@@ -1,3 +1,9 @@
+# 1.0.0 - 2016-09-07
+
+* Improve timeout: use consistent [error-first callback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/) behavior.
+* Add `connectTimeout` and `subscribeTimeout` params on the command line and API.
+* Drop support for Node.js < v4.x.x. `let`, `const`, and string templates ahoy!
+
 # 0.2.3 - 2016-09-06
 
 * Support arbitrary collection for `subscribe()` call.

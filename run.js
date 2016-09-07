@@ -2,10 +2,10 @@
 
 'use strict';
 
-var MeteorPing = require('./lib/index.js');
-var yargs = require('yargs');
+const MeteorPing = require('./lib/index.js');
+const yargs = require('yargs');
 
-var argv = yargs
+const argv = yargs
   .usage('Usage: $0 [options]')
   .boolean(['ssl'])
   .default(MeteorPing.defaultConstructorArgs)
@@ -13,7 +13,7 @@ var argv = yargs
   .alias('h', 'help')
   .argv;
 
-var x = new MeteorPing({
+const x = new MeteorPing({
   host: argv.host,
   port: argv.port,
   ssl: argv.ssl,
