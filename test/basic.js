@@ -24,7 +24,7 @@ describe('Setup', function() {
 describe('Ping', function() {
   describe('simple attempt', function() {
     it('no errors on ping attempt and calls callback', function(done) {
-      var m = new MeteorPing({timeout: 1});
+      var m = new MeteorPing({connectTimeout: 1});
       m.ping(function() {
         // discard error & result
         done();

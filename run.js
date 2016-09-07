@@ -17,7 +17,8 @@ var x = new MeteorPing({
   host: argv.host,
   port: argv.port,
   ssl: argv.ssl,
-  timeout: argv.timeout,
+  connectTimeout: argv.connectTimeout,
+  subscribeTimeout: argv.subscribeTimeout,
   collection: argv.collection,
 });
 

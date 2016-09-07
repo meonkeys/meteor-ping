@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/meonkeys/meteor-ping.svg?branch=master)](https://travis-ci.org/meonkeys/meteor-ping)
 
-Ping a [Meteor](https://www.meteor.com) app to confirm it is online. This is a "DDP ping", using a Meteor-specific test (subscribing to a collection) to determine if an app is online and measure the response time.
+Ping a [Meteor](https://www.meteor.com) app. This "DDP ping" only succeeds if a Meteor-specific test (subscribing to a collection) passes.
 
 Timing is done internally to adjust for Node.js startup time.
+
+This code is used heavily and frequently for pinging many Meteor apps in production.
 
 ## Synopsis
 
@@ -12,7 +14,7 @@ Timing is done internally to adjust for Node.js startup time.
 
 ```bash
 npm install -g meteor-ping
-meteor-ping --host=pingme.meteor.com --port=80
+meteor-ping --host www.meteor.com --port 443
 ```
 
 Upon failure, a message is printed to standard error and the program exits with an error code.
@@ -24,6 +26,8 @@ Upon success, the milliseconds elapsed for the ping is printed to standard outpu
 ```bash
 npm install --save meteor-ping
 ```
+
+The only public function is `ping()`, which takes one argument, a [standard Node.js-style callback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/). The second argument to the callback is an object with one key: `elapsedTimeInMs`. Example usage:
 
 ```javascript
 'use strict';
@@ -58,9 +62,11 @@ All arguments are optional.
     * Default `3000`.
 1. `ssl` - whether to use SSL for the connection. Boolean. Automatically `true` if `port` is `443` (no idea why).
     * Default `false`.
-1. `timeout` - milliseconds before timing out the ping attempt. Must be a number greater than or equal to 1. **Warning** this does not abort execution, but tries to prevent any further action in `MeteorPing`. Someday timing out may throw an exception.
-    * Default `10000`.
-1. `collection` - collection to use for `subscribe()` call during DDP ping test. Must be a string. Consider using a database-backed collection if you have one--this provides a full round-trip ping.
+1. `connectTimeout` - milliseconds before timing out the DDP `connect()` call. Must be a number greater than or equal to 1.
+    * Default `5000`.
+1. `subscribeTimeout` - milliseconds before timing out the DDP `subscribe()` call. Must be a number greater than or equal to 1.
+    * Default `5000`.
+1. `collection` - collection to use for `subscribe()` call. Must be a string. Consider using a database-backed collection if you have one--this provides a full round-trip ping.
     * Default `meteor.loginServiceConfiguration`.
 
 ## Description
