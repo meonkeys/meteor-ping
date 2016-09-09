@@ -1,3 +1,7 @@
+# 1.0.1 - 2016-09-09
+
+* Prevent double callback bug in ddp `connect()`.
+
 # 1.0.0 - 2016-09-07
 
 * Improve timeout: use consistent [error-first callback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/) behavior.
