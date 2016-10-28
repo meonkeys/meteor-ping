@@ -77,7 +77,7 @@ The pinged app must use the [Accounts system](https://docs.meteor.com/#/full/acc
 
 ## Compatibility
 
-This package has been tested with Node.js version 0.10.46.
+This package has been tested with Node.js version 4.6.1.
 
 ## Copyright, License
 
