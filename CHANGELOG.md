@@ -1,3 +1,7 @@
+## 1.0.3 - 2017-01-03
+
+* Prevent double callback bug in ddp `subscribe()`.
+
 ## 1.0.2 - 2016-10-27
 
 * Fix bug: actually use `subscribeTimeout` instead of just `connectTimeout` for both `subscribe()` and `connect()` timeouts.

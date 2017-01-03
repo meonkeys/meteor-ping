@@ -1,6 +1,6 @@
 {
   "name": "meteor-ping",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ping a Meteor app to confirm it is online",
   "main": "./lib/index",
   "directories": {
